@@ -21,9 +21,10 @@ hr{
     border: solid 1px #dbdbdb;
 }
 body{
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
     #root{
-        width: 1300px;
+        width: 96%;
+        max-width: 1300px;
     }
 }

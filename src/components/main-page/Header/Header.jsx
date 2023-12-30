@@ -10,7 +10,7 @@ const options = [
         id: 1,
         description: 'Inicio',
         href: '',
-        isActivate: false
+        isActivate: true
     },
     {
         id: 2,
@@ -32,14 +32,52 @@ const options = [
     }
 ]
 
+const products = [
+    {
+        id: 1,
+        description: 'Celular iPhone',
+        price: 35000,
+        img: ''
+    },
+    {
+        id: 2,
+        description: 'Celular Xiaomi',
+        price: 15000,
+        img: ''
+    },
+    {
+        id: 3,
+        description: 'Celular Samsung',
+        price: 20000,
+        img: ''
+    }
+];
+
+const productsOnCart = [
+    {
+        id: 1,
+        description: 'Celular iPhone',
+        price: 35575.99,
+        img: ''
+    },
+    {
+        id: 3,
+        description: 'Celular Samsung',
+        price: 19850.89,
+        img: ''
+    }
+];
+
 function Header() {
 
     const [stateOptions, setStateOptions] = useState(options);
 
+    const [productCart, setProductCart] = useState(productsOnCart);
+
     const activeOption = (id) => {
         let options = [...stateOptions]
-        options.forEach(option=>option.isActivate = false);
-        let index = options.findIndex(option=>option.id === id);
+        options.forEach(option => option.isActivate = false);
+        let index = options.findIndex(option => option.id === id);
         options[index].isActivate = true;
         setStateOptions(options);
     }
@@ -54,8 +92,9 @@ function Header() {
                     options={stateOptions}
                     activeOption={activeOption}
                 />
-                <UserMarket 
-                    userInfo={'Manuel1662'}
+                <UserMarket
+                    userInfo={''}
+                    productsOnCart={productCart}
                 />
             </div>
             <hr />
