@@ -1,0 +1,32 @@
+.header-content{
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    .logo-content{
+        figure{
+            width: 80px;
+            height: 80px;
+        }
+    }
+    .options-content{
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            li{
+                list-style: none;
+                a{
+                    transition: 0.2s;
+                    font-weight: 500;
+                    padding: 10px 40px;
+                    &:hover{
+                        color: #5f5fff;
+                    }
+                    &.active{
+                        color: #5f5fff;
+                    }
+                }
+            }
+        }
+    }
+}

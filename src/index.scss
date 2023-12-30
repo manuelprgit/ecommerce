@@ -1,0 +1,29 @@
+$blue-a:#5f5fff;
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #565555;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+hr{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    border: solid 1px #dbdbdb;
+}
+body{
+    display: grid;
+    place-content: center;
+    #root{
+        width: 1300px;
+    }
+}
