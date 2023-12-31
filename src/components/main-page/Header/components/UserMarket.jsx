@@ -1,7 +1,8 @@
+import { formatter } from '../../../../helpers/utilities';
 import '../header.scss';
-import bagIcon from '../../../../img/calendar.svg';
+import bagIcon from '../../../../img/icons/shopping_bag.svg';
 
-function UserMarket({ userInfo,productsOnCart }) {
+function UserMarket({ userInfo, productsOnCart }) {
     return (
         <>
             <div className="user-market">
@@ -11,16 +12,16 @@ function UserMarket({ userInfo,productsOnCart }) {
                 <div className="cart-info">
                     <div className="cart-amount">
                         <p>
-                            Cart / 
+                            Cart /
                             $
                             <span>
-                                {productsOnCart.reduce((acc,item)=>acc+item.price,0)}
+                                {formatter(productsOnCart.reduce((acc, item) => acc + item.price, 0))}
                             </span>
                         </p>
                     </div>
                     <div className="items-cart-quantity">
                         <figure>
-                            <img src={bagIcon} alt="" />
+                            <img src={bagIcon} alt="shopping bag" />
                         </figure>
                         <div className="total-items">
                             <p>{productsOnCart.length}</p>

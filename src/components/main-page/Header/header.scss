@@ -35,6 +35,13 @@
         justify-content: end;
         gap: 24px;
         .cart-info{
+            .cart-amount{
+                p{
+                    span{
+                        font-size: 16px;
+                    }
+                }
+            }
             display: flex;
             align-items: center;
             gap: 12px;
@@ -47,9 +54,8 @@
                 .total-items{
                     position: absolute;
                     background-color: #5f5fff;
-                    color: white;
-                    width: 28px;
-                    height: 28px;
+                    width: 24px;
+                    height: 24px;
                     border-radius: 50px;
                     display: grid;
                     place-content: center;
@@ -57,6 +63,7 @@
                     bottom: -11px;
                     p{
                         font-size: 14px;
+                        color: white;
                         font-weight: 600;
                     }
                 }
