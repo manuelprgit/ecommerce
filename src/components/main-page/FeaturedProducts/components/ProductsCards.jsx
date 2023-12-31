@@ -1,12 +1,20 @@
 import { formatter } from "../../../../helpers/utilities"
 
-function ProductsCards({ product }) {
+import add from '../../../../img/icons/add.svg' 
+
+function ProductsCards({ product, addProductsOnCart }) {
 
     return (
         <>
             <div className="product-card">
-                <div className="add-to-bag">
+                <div 
+                    onClick={() => {
+                        addProductsOnCart(product.id);
+                    }}
+                    className="add-to-bag"
+                >
                     <figure> 
+                        <img src={add} alt="Add Button" className="add-btn"/>
                     </figure>
                 </div>
                 <div className="product-img">

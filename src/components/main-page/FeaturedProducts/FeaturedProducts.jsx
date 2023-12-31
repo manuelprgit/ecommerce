@@ -1,7 +1,7 @@
 import { ProductsCards } from "./components/ProductsCards"
 import './featured-products.scss'
 
-function FeaturedProducts({ products }) {
+function FeaturedProducts({ products, addProductsOnCart }) {
     return (
         <>
             <div className="feature-products-content">
@@ -14,6 +14,7 @@ function FeaturedProducts({ products }) {
                             <ProductsCards
                                 key={product.id}
                                 product={product}
+                                addProductsOnCart={addProductsOnCart}
                             />
                         )
                     })}

@@ -61,27 +61,11 @@ const products = [
     }
 ];
 
-const productsOnCart = [
-    {
-        id: 1,
-        description: 'Celular iPhone',
-        price: 35575.99,
-        img: ''
-    },
-    {
-        id: 3,
-        description: 'Celular Samsung',
-        price: 19850.89,
-        img: ''
-    }
-];
-
-
 function App() {
 
     const [stateOptions, setStateOptions] = useState(options);
 
-    const [productCart, setProductCart] = useState(productsOnCart);
+    const [productCart, setProductCart] = useState([]);
 
     const activeOption = (id) => {
         let options = [...stateOptions]
@@ -91,17 +75,23 @@ function App() {
         setStateOptions(options);
     }
 
+    const addProductsOnCart = (id) => {
+        let getProduct = products.find(product => product.id === id);
+        setProductCart(prevProducts => [...prevProducts,getProduct]);
+    }
+
     return (
         <>
-            <ContactHeader />
-            <Header 
+            {/* <ContactHeader /> */}
+            <Header
                 stateOptions={stateOptions}
                 productCart={productCart}
                 activeOption={activeOption}
             />
             <Hero />
-            <FeaturedProducts 
+            <FeaturedProducts
                 products={products}
+                addProductsOnCart={addProductsOnCart}
             />
         </>
     )
