@@ -1,4 +1,8 @@
 $blue-a: #5f5fff;
+$border-line: #dbdbdb;
+$font-black: #565555;
+$font-smooth: #8f8f8f;
+
 
 //#region reset CSS
 html,
@@ -185,7 +189,7 @@ hr {
   width: 100%;
   position: absolute;
   left: 0;
-  border: solid 1px #dbdbdb;
+  border: solid 1px $border-line;
 }
 
 body {

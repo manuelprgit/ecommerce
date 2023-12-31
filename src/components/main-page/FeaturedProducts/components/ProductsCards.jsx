@@ -23,8 +23,8 @@ function ProductsCards({ product, addProductsOnCart }) {
                     </figure>
                 </div>
                 <div className="product-description">
-                    <p>{product.description}</p>
-                    <p>${formatter(product.price)}</p>
+                    <p className="pro-description">{product.description}</p>
+                    <p className="pro-price">${formatter(product.price)}</p>
                 </div>
             </div>
         </>

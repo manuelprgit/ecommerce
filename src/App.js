@@ -4,6 +4,7 @@ import { ContactHeader } from "./components/main-page/ContactHeader/ContactHeade
 import { Header } from "./components/main-page/Header/Header";
 import { Hero } from "./components/main-page/Hero/Hero";
 import { FeaturedProducts } from "./components/main-page/FeaturedProducts/FeaturedProducts";
+import { Brands } from './components/main-page/Brands/Brands';
 import './index.scss';
 
 
@@ -61,6 +62,56 @@ const products = [
     }
 ];
 
+const featuredProducts = [
+    {
+        id: 1,
+        description: 'iPhone 15 Pro',
+        price: 57942,
+        img: './img/productsImg/iphone15.jpeg'
+    },
+    {
+        id: 2,
+        description: 'Redmi Note 12 pro',
+        price: 17400,
+        img: './img/productsImg/redmi12pro.jpeg'
+    },
+    {
+        id: 3,
+        description: 'Samsung Galaxy S21',
+        price: 10800,
+        img: './img/productsImg/samsung21.jpg'
+    },
+    {
+        id: 4,
+        description: 'Redmi 13C',
+        price: 7800,
+        img: './img/productsImg/redmi13c.jpeg'
+    }
+]
+
+const brands = [
+    {
+        id: 1,
+        description: 'Apple',
+        img:'./img/brandsImg/apple.png',
+    },
+    {
+        id:2,
+        description: 'Xiaomi',
+        img:'./img/brandsImg/xiaomi.png'
+    },
+    {
+        id:3,
+        description: 'Samsung',
+        img:'./img/brandsImg/samsung.png'
+    },
+    {
+        id:4,
+        description: 'Nokia',
+        img:'./img/brandsImg/nokia.png'
+    }
+]
+
 function App() {
 
     const [stateOptions, setStateOptions] = useState(options);
@@ -76,13 +127,12 @@ function App() {
     }
 
     const addProductsOnCart = (id) => {
-        let getProduct = products.find(product => product.id === id);
-        setProductCart(prevProducts => [...prevProducts,getProduct]);
+        let getProduct = featuredProducts.find(product => product.id === id);
+        setProductCart(prevProducts => [...prevProducts, getProduct]);
     }
 
     return (
         <>
-            {/* <ContactHeader /> */}
             <Header
                 stateOptions={stateOptions}
                 productCart={productCart}
@@ -90,8 +140,11 @@ function App() {
             />
             <Hero />
             <FeaturedProducts
-                products={products}
+                products={featuredProducts}
                 addProductsOnCart={addProductsOnCart}
+            />
+            <Brands 
+                brands={brands}
             />
         </>
     )

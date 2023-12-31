@@ -38,6 +38,13 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 height: 100px;
+                .pro-description{
+                    font-size: 20px;
+                }
+                .pro-price{
+                    font-size: 18px;
+                    color: #8f8f8f;
+                }
             } 
         }
     }    
