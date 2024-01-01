@@ -9,7 +9,15 @@ function UserMarket({ userInfo, productsOnCart }) {
                 <a href=''>
                     {(userInfo.length > 0) ? userInfo : 'Iniciar Sesión'}
                 </a>
-                <div className="cart-info">
+                <div
+                    className="cart-info"
+                    onClick={() => {
+                        document
+                            .querySelector('.sidebar-cart-container')
+                            .classList
+                            .add('show');
+                    }}
+                >
                     <div className="cart-amount">
                         <p>
                             Cart /

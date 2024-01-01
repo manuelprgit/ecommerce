@@ -132,6 +132,15 @@ function App() {
         setProductCart(prevProducts => [...prevProducts, getProduct]);
     }
 
+    const removeProductsOnCart = (id) => {
+        // debugger
+        let newList = [...productCart];
+        let index = newList.findIndex(product => product.id === id);
+        newList.splice(index,1);
+        console.log(newList);
+        setProductCart(newList);
+    }
+
     return (
         <>
             <Header
@@ -139,7 +148,10 @@ function App() {
                 productCart={productCart}
                 activeOption={activeOption}
             />
-            <SideBarCart />
+            <SideBarCart 
+                productCart={productCart}
+                removeProductsOnCart={removeProductsOnCart}
+            />
             <Hero />
             <FeaturedProducts
                 products={featuredProducts}

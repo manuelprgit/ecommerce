@@ -47,6 +47,13 @@
             justify-content: end;
             gap: 24px;
             .cart-info{
+                cursor: pointer;
+                transition: 0.2s;
+                border-radius: 8px;
+                padding: 16px 12px;
+                &:hover{
+                    background-color: #00000020;
+                }
                 .cart-amount{
                     p{
                         span{
@@ -58,8 +65,7 @@
                 align-items: center;
                 gap: 12px;
                 .items-cart-quantity{
-                    position: relative;
-                    cursor: pointer;
+                    position: relative; 
                     figure{
                         width: 36px;
                         height: 36px;
