@@ -1,0 +1,21 @@
+.side-bar-cart-container{
+    transition: 0.2s;
+    z-index: 50;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100vh;
+    background-color: #00000050;
+    .side-bar-cart-content{
+        transition: 0.4s;
+        position: absolute;
+        border: solid 1px;
+        width: 500px;
+        height: 100vh;
+        z-index: 25;
+        right: 0;
+        background-color: white;
+        transform: translateX(100%);
+    }
+}

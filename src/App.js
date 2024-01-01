@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { ContactHeader } from "./components/main-page/ContactHeader/ContactHeader";
+import { SideBarCart } from './components/main-page/SideBarCart/SideBarCart';
 import { Header } from "./components/main-page/Header/Header";
 import { Hero } from "./components/main-page/Hero/Hero";
 import { FeaturedProducts } from "./components/main-page/FeaturedProducts/FeaturedProducts";
@@ -93,22 +94,22 @@ const brands = [
     {
         id: 1,
         description: 'Apple',
-        img:'./img/brandsImg/apple.png',
+        img: './img/brandsImg/apple.png',
     },
     {
-        id:2,
+        id: 2,
         description: 'Xiaomi',
-        img:'./img/brandsImg/xiaomi.png'
+        img: './img/brandsImg/xiaomi.png'
     },
     {
-        id:3,
+        id: 3,
         description: 'Samsung',
-        img:'./img/brandsImg/samsung.png'
+        img: './img/brandsImg/samsung.png'
     },
     {
-        id:4,
+        id: 4,
         description: 'Nokia',
-        img:'./img/brandsImg/nokia.png'
+        img: './img/brandsImg/nokia.png'
     }
 ]
 
@@ -138,12 +139,13 @@ function App() {
                 productCart={productCart}
                 activeOption={activeOption}
             />
+            <SideBarCart />
             <Hero />
             <FeaturedProducts
                 products={featuredProducts}
                 addProductsOnCart={addProductsOnCart}
             />
-            <Brands 
+            <Brands
                 brands={brands}
             />
         </>

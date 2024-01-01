@@ -17,7 +17,7 @@ function ProductsCards({ product, addProductsOnCart }) {
                         <img src={add} alt="Add Button" className="add-btn"/>
                     </figure>
                 </div>
-                <div className="product-img">
+                <div className="product-img hover">
                     <figure>
                         <img src={product.img} alt={product.description} />
                     </figure>

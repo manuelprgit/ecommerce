@@ -209,3 +209,12 @@ h2 {
 h3 {
   font-size: 40px;
 } 
+.hover{ 
+  transition: transform 0.2s ease-in-out;
+  &:hover{
+      transform: scale(1.04);
+  }
+  &:active{
+    transform: scale(1);
+  }
+}

@@ -1,8 +1,8 @@
 function BrandCards({ brand }) {
     return (
         <>
-            <div className="brand-card">
-                <div className="img-content">
+            <div className="brand-card ">
+                <div className="img-content hover">
                     <figure>
                         <img src={brand.img} alt={brand.description} />
                     </figure>

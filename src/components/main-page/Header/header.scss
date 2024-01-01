@@ -1,6 +1,6 @@
 .header-container{
     position: fixed;
-    z-index: 10;
+    z-index: 15;
     width: 100%; 
     left: 0; 
     top: 0;
@@ -59,6 +59,7 @@
                 gap: 12px;
                 .items-cart-quantity{
                     position: relative;
+                    cursor: pointer;
                     figure{
                         width: 36px;
                         height: 36px;
