@@ -68,25 +68,29 @@ const featuredProducts = [
         id: 1,
         description: 'iPhone 15 Pro',
         price: 57942,
-        img: './img/productsImg/iphone15.jpeg'
+        img: './img/productsImg/iphone15.jpeg',
+        quantity: 1
     },
     {
         id: 2,
         description: 'Redmi Note 12 pro',
         price: 17400,
-        img: './img/productsImg/redmi12pro.jpeg'
+        img: './img/productsImg/redmi12pro.jpeg',
+        quantity: 1
     },
     {
         id: 3,
         description: 'Samsung Galaxy S21',
         price: 10800,
-        img: './img/productsImg/samsung21.jpg'
+        img: './img/productsImg/samsung21.jpg',
+        quantity: 1
     },
     {
         id: 4,
         description: 'Redmi 13C',
         price: 7800,
-        img: './img/productsImg/redmi13c.jpeg'
+        img: './img/productsImg/redmi13c.jpeg',
+        quantity: 1
     }
 ]
 
@@ -129,6 +133,12 @@ function App() {
 
     const addProductsOnCart = (id) => {
         let getProduct = featuredProducts.find(product => product.id === id);
+        let hasRepeatArticle = productCart.includes(getProduct);
+        if(hasRepeatArticle){
+            //TODO:AGREGARLE UN NUMERO SI EL ARTICULO ESTA
+            getProduct.quantity++;
+            return;
+        }
         setProductCart(prevProducts => [...prevProducts, getProduct]);
     }
 

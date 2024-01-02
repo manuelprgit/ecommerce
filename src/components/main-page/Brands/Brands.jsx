@@ -11,6 +11,7 @@ function Brands({ brands }) {
                 <div className="brands-card-content">
                     {brands.map(brand=>
                         <BrandCards
+                            key={brand.id}
                             brand={brand}
                         />
                     )}

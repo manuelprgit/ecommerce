@@ -15,7 +15,14 @@ const closeSidebarCart = () => {
 function SideBarCart({ productCart,removeProductsOnCart }) {
     return (
         <>
-            <div className="sidebar-cart-container" id='sidebarCart' >
+            <div 
+                className="sidebar-cart-container"
+                onClick={(e) => {
+                    if(e.target.classList.contains('show'))
+                        e.target.classList.remove('show')
+                    
+                }}    
+            >
                 <div className="sidebar-cart-content">
                     <div className="sidebar-cart-header">
                         <div className="total-articles">
@@ -41,6 +48,7 @@ function SideBarCart({ productCart,removeProductsOnCart }) {
                         {
                             productCart.map(product =>
                                 <ProductsCardsForCart
+                                    id={product.id}
                                     product={product}
                                     removeProductsOnCart={removeProductsOnCart}
                                 />
