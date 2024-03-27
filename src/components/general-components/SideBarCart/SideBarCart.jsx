@@ -48,7 +48,7 @@ function SideBarCart({ productCart,removeProductsOnCart }) {
                         {
                             productCart.map(product =>
                                 <ProductsCardsForCart
-                                    id={product.id}
+                                    key={product.id}
                                     product={product}
                                     removeProductsOnCart={removeProductsOnCart}
                                 />

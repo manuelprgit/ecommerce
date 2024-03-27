@@ -55,6 +55,7 @@
             max-height: 92vh;
             overflow-y: scroll;
             .product-cards{
+                position: relative;
                 display: grid;
                 grid-template-columns: 1fr 3fr 0.4fr;
                 align-items: center;
@@ -82,6 +83,19 @@
                     figure{
                         width: 32px;
                         height: 32px;
+                    }
+                }
+                .product-quantity-total{
+                    position: absolute;
+                    right: 4px;
+                    bottom: 4px;
+                    input{
+                        font-size: 18px;
+                        text-align: end;
+                        padding: 6px;
+                        width: 57px;
+                        box-shadow: 1px 1px 5px;
+                        border-radius: 6px;
                     }
                 }
             }

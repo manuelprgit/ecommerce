@@ -3,6 +3,7 @@ import '../header.scss';
 import bagIcon from '../../../../img/icons/shopping_bag.svg';
 
 function UserMarket({ userInfo, productsOnCart }) {
+    console.log(productsOnCart)
     return (
         <>
             <div className="user-market">
@@ -23,7 +24,7 @@ function UserMarket({ userInfo, productsOnCart }) {
                             Cart /
                             $
                             <span>
-                                {formatter(productsOnCart.reduce((acc, item) => acc + item.price, 0))}
+                                {formatter(productsOnCart.reduce((acc, item) => acc + (item.price * item.quantity), 0))}
                             </span>
                         </p>
                     </div>
@@ -32,7 +33,7 @@ function UserMarket({ userInfo, productsOnCart }) {
                             <img src={bagIcon} alt="shopping bag" />
                         </figure>
                         <div className="total-items">
-                            <p>{productsOnCart.length}</p>
+                            <p>{productsOnCart.reduce((total, product)=>total + product.quantity,0)}</p>
                         </div>
                     </div>
                 </div>

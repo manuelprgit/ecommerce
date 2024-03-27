@@ -24,6 +24,9 @@ function ProductsCardsForCart({ product, removeProductsOnCart }) {
                         <img src={trashCan} alt="" />
                     </figure>
                 </div>
+                <div className="product-quantity-total">
+                    <input type="number" defaultValue={product.quantity}/>
+                </div>
             </div>
         </>
     )

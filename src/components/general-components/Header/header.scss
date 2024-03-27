@@ -1,3 +1,5 @@
+@import '../../../index.scss';
+
 .header-container{
     position: fixed;
     z-index: 15;
@@ -32,10 +34,10 @@
                         font-weight: 500;
                         padding: 10px 40px;
                         &:hover{
-                            color: #5f5fff;
+                            color: $secondary;
                         }
                         &.active{
-                            color: #5f5fff;
+                            color: $secondary;
                         }
                     }
                 }
@@ -72,7 +74,7 @@
                     }
                     .total-items{
                         position: absolute;
-                        background-color: #5f5fff;
+                        background-color: $primary;
                         width: 24px;
                         height: 24px;
                         border-radius: 50px;
@@ -82,8 +84,8 @@
                         bottom: -11px;
                         p{
                             font-size: 14px;
-                            color: white;
-                            font-weight: 600;
+                            color: black;
+                            font-weight: 500;
                         }
                     }
                 }

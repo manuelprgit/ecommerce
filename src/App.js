@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import { ContactHeader } from "./components/main-page/ContactHeader/ContactHeader";
-import { SideBarCart } from './components/main-page/SideBarCart/SideBarCart';
-import { Header } from "./components/main-page/Header/Header";
+import { SideBarCart } from './components/general-components/SideBarCart/SideBarCart';
+import { Header } from './components/general-components/Header/Header'
 import { Hero } from "./components/main-page/Hero/Hero";
 import { FeaturedProducts } from "./components/main-page/FeaturedProducts/FeaturedProducts";
 import { Brands } from './components/main-page/Brands/Brands';
+import { Footer } from './components/general-components/Footer/Footer';
 import './index.scss';
 
 
@@ -133,43 +134,50 @@ function App() {
 
     const addProductsOnCart = (id) => {
         let getProduct = featuredProducts.find(product => product.id === id);
+        let newList = [...productCart];
         let hasRepeatArticle = productCart.includes(getProduct);
-        if(hasRepeatArticle){
-            //TODO:AGREGARLE UN NUMERO SI EL ARTICULO ESTA
-            getProduct.quantity++;
+        if (hasRepeatArticle) {
+            let key = newList.findIndex(product => product.id === id);
+            newList[key].quantity++;
+            console.log(newList);
+            setProductCart(newList);
             return;
         }
-        setProductCart(prevProducts => [...prevProducts, getProduct]);
+        console.log(newList);
+        setProductCart([...newList, getProduct]);
     }
 
     const removeProductsOnCart = (id) => {
-        // debugger
         let newList = [...productCart];
         let index = newList.findIndex(product => product.id === id);
-        newList.splice(index,1);
+        newList.splice(index, 1);
         console.log(newList);
         setProductCart(newList);
     }
 
     return (
         <>
-            <Header
-                stateOptions={stateOptions}
-                productCart={productCart}
-                activeOption={activeOption}
-            />
-            <SideBarCart 
-                productCart={productCart}
-                removeProductsOnCart={removeProductsOnCart}
-            />
-            <Hero />
-            <FeaturedProducts
-                products={featuredProducts}
-                addProductsOnCart={addProductsOnCart}
-            />
-            <Brands
-                brands={brands}
-            />
+            <div className='general-content'>
+                <Header
+                    stateOptions={stateOptions}
+                    productCart={productCart}
+                    activeOption={activeOption}
+                />
+                <SideBarCart
+                    productCart={productCart}
+                    removeProductsOnCart={removeProductsOnCart}
+                />
+                <Hero />
+                <FeaturedProducts
+                    products={featuredProducts}
+                    addProductsOnCart={addProductsOnCart}
+                />
+                <Brands
+                    brands={brands}
+                />
+
+            </div>
+            <Footer />
         </>
     )
 }
