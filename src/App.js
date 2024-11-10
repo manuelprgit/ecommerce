@@ -99,7 +99,7 @@ const brands = [
     {
         id: 1,
         description: 'Apple',
-        img: './img/brandsImg/apple.png',
+        img: './img/Producto/beat.png',
     },
     {
         id: 2,
